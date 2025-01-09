@@ -1832,9 +1832,10 @@ var Swipe = function () {
 			var _this = this;
 
 			this.slider.container.addEventListener('dragstart', function (e) {
-				if (!_this._supportsPassive) {
-					e.preventDefault();
-				}
+				// if (!_this._supportsPassive) {
+				// 	e.preventDefault();
+				// }
+				return false;
 			});
 			this.slider.container.addEventListener('mousedown', this.onStartDrag);
 			this.slider.container.addEventListener('touchstart', this.onStartDrag);
@@ -1852,9 +1853,10 @@ var Swipe = function () {
 			var _this2 = this;
 
 			this.slider.container.removeEventListener('dragstart', function (e) {
-				if (!_this2._supportsPassive) {
-					e.preventDefault();
-				}
+				// if (!_this2._supportsPassive) {
+				// 	e.preventDefault();
+				// }
+				return false;
 			});
 			this.slider.container.removeEventListener('mousedown', this.onStartDrag);
 			this.slider.container.removeEventListener('touchstart', this.onStartDrag);
@@ -1874,13 +1876,14 @@ var Swipe = function () {
 	}, {
 		key: 'onStartDrag',
 		value: function onStartDrag(e) {
-			if (e.touches) {
-				if (e.touches.length > 1) {
-					return;
-				} else {
-					e = e.touches[0];
-				}
-			}
+			// if (e.touches) {
+			// 	if (e.touches.length > 1) {
+			// 		return;
+			// 	} else {
+			// 		e = e.touches[0];
+			// 	}
+			// }
+			return false;
 
 			this._origin = new __WEBPACK_IMPORTED_MODULE_0__utils_coordinate__["a" /* default */](e.screenX, e.screenY);
 			this.width = this.slider.wrapperWidth;

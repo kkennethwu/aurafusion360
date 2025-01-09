@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting.">
+  <meta name="keywords" content="AuraFusion360, 3DGS, Inpainting">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
-
+  <title>AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
@@ -39,6 +38,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
 </head>
 <body>
 
@@ -63,17 +63,8 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
+          <a class="navbar-item" href="https://linjohnss.github.io/frugalnerf/">
+            FurgalNeRF
           </a>
         </div>
       </div>
@@ -88,38 +79,42 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">AuraFusion360 <img src="static/images/favicon.svg" alt="icon" style="height: 1em; vertical-align: top;"></h1>
+          <h2 class="subtitle is-3 publication-subtitle">Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://kkennethwu.github.io/">Chung-Ho Wu*</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="">Yang-Jung Chen*</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
+              <a href="">Ying-Huan Chen</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
+              <a href="">Jie-Ying Lee</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
+              <a href="">Bo-Hsu Ke</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
+              <a href="">Chun-Wei Tuan Mu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+              <a href="">Yi-Chuan Huang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://linjohnss.github.io/">Chin-Yang Lin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Min-Hung Chen</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yulunalexliu.github.io/">Yu-Lun Liu</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>National Yang Ming Chiao Tung University,</span>
+            <span class="author-block"><sup>2</sup>NVIDIA</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -127,9 +122,9 @@
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
+              </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -138,7 +133,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,7 +141,7 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
@@ -154,12 +149,12 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Comming Soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://drive.google.com/drive/folders/1C0OqUSavUBwR_p_yNRBia90jvC-23hNN?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -175,7 +170,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -183,226 +178,228 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">AuraFusion360</span> can remove object in the unbounded 360 scene.
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
+<h2 class="subtitle has-text-centered">
+  <span class="dnerf">AuraFusion360</span> can remove object in the unbounded 360 scene.
+</h2>
 
-<section class="hero is-light is-small">
+<section class="hero is-light is-small" >
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
+
+          <div class="item item-carton">
+              <div class="video-compare-container" id="cartonDiv" style="width: 100%;">
+                  <video class="video" id="carton" loop playsinline autoPlay muted src="./videos/360-USID/concats/carton.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="cartonMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item item-cone">
+              <div class="video-compare-container" id="coneDiv" style="width: 100%;">
+                  <video class="video" id="cone" loop playsinline autoPlay muted src="./videos/360-USID/concats/cone.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="coneMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item item-cookie">
+              <div class="video-compare-container" id="cookieDiv" style="width: 100%;">
+                  <video class="video" id="cookie" loop playsinline autoPlay muted src="./videos/360-USID/concats/cookie.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="cookieMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item item-newcone">
+              <div class="video-compare-container" id="newconeDiv" style="width: 100%;">
+                  <video class="video" id="newcone" loop playsinline autoPlay muted src="./videos/360-USID/concats/newcone.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="newconeMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="video-compare-container" id="skateboardDiv" style="width: 100%;">
+                  <video class="video" id="skateboard" loop playsinline autoPlay muted src="./videos/360-USID/concats/skateboard.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="skateboardMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="video-compare-container" id="sunflowerDiv" style="width: 100%;">
+                  <video class="video" id="sunflower" loop playsinline autoPlay muted src="./videos/360-USID/concats/sunflower.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="sunflowerMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item">
+            <div class="video-compare-container" id="plantDiv" style="width: 100%;">
+                <video class="video" id="plant" loop playsinline autoPlay muted src="./videos/360-USID/concats/plant.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="plantMerge" style="width: 100%;"></canvas>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
+  <h2 class="subtitle has-text-centered" style="margin-top: -1.2rem;">
+    Inpainting Results of Our <span class="dnerf">360-USID</span> Dataset
+  </h2>
 </section>
+
+
+
+<section class="hero is-light is-small" >
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item item-pinecone">
+              <div class="video-compare-container" id="pineconeDiv" style="width: 100%;">
+                  <video class="video" id="pinecone" loop playsinline autoPlay muted src="./videos/Other-360/concats/pinecone.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="pineconeMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+
+          <div class="item item-vasedeck">
+              <div class="video-compare-container" id="vasedeckDiv" style="width: 100%;">
+                  <video class="video" id="vasedeck" loop playsinline autoPlay muted src="./videos/Other-360/concats/vasedeck.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="vasedeckMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item item-kitchen">
+            <div class="video-compare-container" id="kitchenDiv" style="width: 100%;">
+                <video class="video" id="kitchen" loop playsinline autoPlay muted src="./videos/Other-360/concats/kitchen.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="kitchenMerge" style="width: 100%;"></canvas>
+            </div>
+          </div>
+
+          <div class="item item-bear">
+            <div class="video-compare-container" id="bearDiv" style="width: 100%;">
+                <video class="video" id="bear" loop playsinline autoPlay muted src="./videos/Other-360/concats/bear.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="bearMerge" style="width: 100%;"></canvas>
+            </div>
+          </div>
+
+          <div class="item item-bonsai">
+              <div class="video-compare-container" id="bonsaiDiv" style="width: 100%;">
+                  <video class="video" id="bonsai" loop playsinline autoPlay muted src="./videos/Other-360/concats/bonsai.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                  <canvas height=0 class="videoMerge" id="bonsaiMerge" style="width: 100%;"></canvas>
+              </div>
+          </div>
+
+          <div class="item item-room">
+            <div class="video-compare-container" id="roomDiv" style="width: 100%;">
+                <video class="video" id="room" loop playsinline autoPlay muted src="./videos/Other-360/concats/room.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="roomMerge" style="width: 100%;"></canvas>
+            </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="subtitle has-text-centered" style="margin-top: -1.2rem;">
+    Inpainting Results of Other Collected 360 Scene.
+  </h2>
+</section>
+
+
 
 
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full-width">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Three-dimensional scene inpainting is crucial for applications from virtual reality to architectural visualization, yet existing methods struggle with view consistency and geometric accuracy in 360° unbounded scenes. We present AuraFusion360, a novel reference-based method leveraging 3D Gaussian Splatting for high-quality object removal and hole filling. Our approach introduces (1) depth-aware unseen mask generation for accurate occlusion identification, (2) Adaptive Guided Depth Diffusion for geometric consistency, and (3) SDEdit-based detail enhancement for multi-view coherence.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            We also introduce 360-USID, the first comprehensive dataset for unbounded scene inpainting with ground truth. Extensive experiments demonstrate that AuraFusion360 significantly outperforms existing methods, achieving superior perceptual quality while maintaining geometric accuracy across dramatic viewpoint changes.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- Pipeline Fig. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="pipeline-figure">
+          <img src="./static/images/pipeline.png" alt="Pipeline" style="width: 100%;"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our method consists of three main components: depth-aware unseen mask generation, Adaptive Guided Depth Diffusion, and SDEdit-based detail enhancement. The depth-aware unseen mask generation module generates a depth-aware unseen mask to identify the occluded regions. The Adaptive Guided Depth Diffusion module fills the holes with geometric consistency. The SDEdit-based detail enhancement module enhances the inpainted results with multi-view coherence.
+          </p>
         </div>
       </div>
+
+
     </div>
-    <!--/ Paper video. -->
+    <!--/ Pipeline Fig. -->
+
+    <div class="columns is-centered">
+      <!-- Unseen Mask Gen. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Unseen Mask Generation</h2>
+          <div class="unseen-figure">
+            <img src="./static/images/unseen.png" alt="Unseen" style="width: 100%;"/>
+          </div>
+          <p>
+            Our unseen mask generation method first generates a depth-aware unseen concure to identify the occluded regions.
+          </p>
+        </div>
+      </div>
+      <!-- Unseen Mask Gen. -->
+
+      <!-- AGDD. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Adaptive Guided Depth Diffusion</h2>
+            <div class="agdd-figure">
+              <img src="./static/images/agdd.png" alt="Agdd" style="width: 100%;"/>
+            </div>
+            <p>
+              Our adaptive guided depth diffusion is a zero-shot method that can align the inpainted regions with the reference image.
+            </p>
+        </div>
+      </div>
+      <!--/ AGDD. -->
+    </div>
+
   </div>
 </section>
 
 
+
+
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Visualization Results</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
+        <h3 class="title is-4">Visualization of Unseen Mask</h3>
+
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+        <h3 class="title is-4">Visualization of Depth Initialized Gaussians</h3>
+ 
         <!--/ Re-rendering. -->
 
       </div>
@@ -445,10 +442,10 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+  author    = {Chung-Ho Wu, Yang-Jung Chen, Ying-Huan Chen, Jie-Ying Lee, Bo-Hsu Ke, Chun-Wei Tuan Mu, Yi-Chuan Huang, Chin-Yang Lin, Min-Hung Chen, Yen-Yu Lin, Yu-Lun Liu},
+  title     = {AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting},
+  journal   = {arXiv},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
@@ -469,16 +466,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Website template borrowed from <a href="https://nerfies.github.io/">NeRFies</a> and <a href="https://nesf3d.github.io/">NeSF</a>.
           </p>
         </div>
       </div>
