@@ -100,7 +100,7 @@
             <span class="author-block">
               <a href="https://jayinnn.dev/">Jie-Ying Lee</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Bo-Hsu Ke</a><sup>1</sup>,</span>
+              <a href="https://hentci.github.io/">Bo-Hsu Ke</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="">Chun-Wei Tuan Mu</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -108,7 +108,7 @@
             <span class="author-block">
               <a href="https://linjohnss.github.io/">Chin-Yang Lin</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Min-Hung Chen</a><sup>2</sup>,</span>
+              <a href="https://minhungchen.netlify.app/">Min-Hung Chen</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://sites.google.com/site/yylinweb/">Yen-Yu Lin</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -357,7 +357,7 @@
         </div>
         <div class="content has-text-justified">
           <p>
-            Our method consists of three main components: (a) depth-aware unseen mask generation, (b) Adaptive Guided Depth Diffusion, and (c) SDEdit-based detail enhancement. The depth-aware unseen mask generation module generates a depth-aware unseen mask to identify the occluded regions. The Adaptive Guided Depth Diffusion module fills the holes with geometric consistency. The SDEdit-based detail enhancement module enhances the inpainted results with multi-view coherence.
+            Our approach takes multi-view RGB images and corresponding object masks as input and outputs a Gaussian representation with the masked objects removed. The pipeline consists of three main stages: <strong>(a) Depth-Aware Unseen Masks Generation to identify truly occluded areas, referred to as the “unseen region”</strong>, <strong>(b) Depth-Aligned Gaussian Initialization on Reference View to fill unseen regions with initialized Gaussian containing reference RGB information after object removal</strong>, and <strong>(c) SDEdit-Based RGB Guidance for Detail Enhancement, which enhances fine details using an inpainting model while preserving reference view information</strong>. Instead of applying SDEdit with random noise, we use DDIM Inversion on the rendered initial Gaussians to generate noise that retains the structure of the reference view, ensuring multi-view consistency across all RGB Guidance.
           </p>
         </div>
       </div>
@@ -373,7 +373,7 @@
             <img src="./static/images/unseen.png" alt="Unseen" style="width: 100%;"/>
           </div>
           <p>
-            Our unseen mask generation method first generates a depth-aware unseen concure to identify the occluded regions.
+            Our depth-aware unseen mask generation method first generates a depth-aware unseen contour by depth warping as a prompt to SAM2, to identify the occluded regions.
           </p>
         </div>
       </div>
@@ -382,12 +382,12 @@
       <!-- AGDD. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-4">Adaptive Guided Depth Diffusion</h2>
+          <h2 class="title is-4">Adaptive Guided Depth Diffusion (AGDD)</h2>
             <div class="agdd-figure">
               <img src="./static/images/agdd.png" alt="Agdd" style="width: 100%;"/>
             </div>
             <p>
-              Our adaptive guided depth diffusion is a zero-shot method that can align the inpainted regions with the reference image.
+              Our AGDD is a zero-shot method that can align the estimated monocular depth with existing geometry.
             </p>
         </div>
       </div>
