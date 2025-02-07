@@ -373,7 +373,7 @@
             <img src="./static/images/unseen.png" alt="Unseen" style="width: 100%;"/>
           </div>
           <p>
-            Our depth-aware unseen mask generation method first generates a depth-aware unseen contour by depth warping as a prompt to SAM2, to identify the occluded regions.
+            Our depth-aware unseen mask generation method operates in two steps. First, it generates a depth-aware unseen contour through depth warping to identify truly occluded regions. Then, it uses this contour as a bounding box prompt for SAM2 to segment the unseen region.
           </p>
         </div>
       </div>
@@ -387,7 +387,7 @@
               <img src="./static/images/agdd.png" alt="Agdd" style="width: 100%;"/>
             </div>
             <p>
-              Our AGDD is a zero-shot method that can align the estimated monocular depth with existing geometry.
+              Our AGDD is a zero-shot method that effectively aligns the estimated monocular depth with the existing geometric structure without requiring additional training.
             </p>
         </div>
       </div>
