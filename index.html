@@ -28,17 +28,26 @@
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="stylesheet" href="./static/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="./static/css/app.css"> -->
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/video_comparison.js"></script>
+  <script src="./static/js/app.js"></script>
 </head>
 <body>
 
@@ -79,9 +88,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">AuraFusion360 <img src="static/images/favicon.svg" alt="icon" style="height: 1em; vertical-align: top;"></h1>
+          <h1 class="title is-1 publication-title neon-text">AuraFusion360 <img src="static/images/favicon.svg" alt="icon" style="height: 1em; vertical-align: top;"></h1>
           <h2 class="subtitle is-3 publication-subtitle">Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting</h2>
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-4 publication-authors">
             <span class="author-block">
               <a href="https://kkennethwu.github.io/">Chung-Ho Wu*</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -106,7 +115,7 @@
               <a href="https://yulunalexliu.github.io/">Yu-Lun Liu</a><sup>1</sup></span>
           </div>
 
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-4 publication-authors">
             <span class="author-block"><sup>1</sup>National Yang Ming Chiao Tung University,</span>
             <span class="author-block"><sup>2</sup>NVIDIA</span>
           </div>
@@ -161,6 +170,17 @@
                   </span>
                   <span>Data</span>
                   </a>
+              </span>
+              <!-- Results Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Results (Comming Soon)</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -170,23 +190,19 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">AuraFusion360</span> can remove object in the unbounded 360 scene.
+      <div class="pipeline-figure">
+        <img src="./static/images/teaser.png" alt="Teaser" style="width: 100%;"/>
+      </div>
+      <h2 class="subtitle is-3 has-text-centered">
+        <!-- <span class="dnerf">AuraFusion360</span> can do inpainting in the 360° unbounded scene. -->
+        <span class="subtitle is-3 neon-text">AuraFusion360</span> can do inpainting in the 360° unbounded scene.
       </h2>
     </div>
   </div>
-</section> -->
-
-<h2 class="subtitle has-text-centered">
-  <span class="dnerf">AuraFusion360</span> can remove object in the unbounded 360 scene.
-</h2>
+</section>
 
 <section class="hero is-light is-small" >
   <div class="hero-body">
@@ -246,7 +262,7 @@
       </div>
     </div>
   </div>
-  <h2 class="subtitle has-text-centered" style="margin-top: -1.2rem;">
+  <h2 class="subtitle is-4 has-text-centered" style="margin-top: -1.2rem;">
     Inpainting Results of Our <span class="dnerf">360-USID</span> Dataset
   </h2>
 </section>
@@ -258,11 +274,34 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
 
+          
+
+          <div class="item item-kitchen">
+            <div class="video-compare-container" id="kitchenDiv" style="width: 100%;">
+                <video class="video" id="kitchen" loop playsinline autoPlay muted src="./videos/Other-360/concats/kitchen.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="kitchenMerge" style="width: 100%;"></canvas>
+            </div>
+          </div>
+
+          <div class="item item-bonsai">
+            <div class="video-compare-container" id="bonsaiDiv" style="width: 100%;">
+                <video class="video" id="bonsai" loop playsinline autoPlay muted src="./videos/Other-360/concats/bonsai.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="bonsaiMerge" style="width: 100%;"></canvas>
+            </div>
+          </div>
+
+          <div class="item item-room">
+            <div class="video-compare-container" id="roomDiv" style="width: 100%;">
+                <video class="video" id="room" loop playsinline autoPlay muted src="./videos/Other-360/concats/room.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="roomMerge" style="width: 100%;"></canvas>
+            </div>
+          </div>
+
           <div class="item item-pinecone">
-              <div class="video-compare-container" id="pineconeDiv" style="width: 100%;">
-                  <video class="video" id="pinecone" loop playsinline autoPlay muted src="./videos/Other-360/concats/pinecone.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
-                  <canvas height=0 class="videoMerge" id="pineconeMerge" style="width: 100%;"></canvas>
-              </div>
+            <div class="video-compare-container" id="pineconeDiv" style="width: 100%;">
+                <video class="video" id="pinecone" loop playsinline autoPlay muted src="./videos/Other-360/concats/pinecone.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="pineconeMerge" style="width: 100%;"></canvas>
+            </div>
           </div>
 
 
@@ -273,13 +312,6 @@
               </div>
           </div>
 
-          <div class="item item-kitchen">
-            <div class="video-compare-container" id="kitchenDiv" style="width: 100%;">
-                <video class="video" id="kitchen" loop playsinline autoPlay muted src="./videos/Other-360/concats/kitchen.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
-                <canvas height=0 class="videoMerge" id="kitchenMerge" style="width: 100%;"></canvas>
-            </div>
-          </div>
-
           <div class="item item-bear">
             <div class="video-compare-container" id="bearDiv" style="width: 100%;">
                 <video class="video" id="bear" loop playsinline autoPlay muted src="./videos/Other-360/concats/bear.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
@@ -287,25 +319,13 @@
             </div>
           </div>
 
-          <div class="item item-bonsai">
-              <div class="video-compare-container" id="bonsaiDiv" style="width: 100%;">
-                  <video class="video" id="bonsai" loop playsinline autoPlay muted src="./videos/Other-360/concats/bonsai.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
-                  <canvas height=0 class="videoMerge" id="bonsaiMerge" style="width: 100%;"></canvas>
-              </div>
-          </div>
-
-          <div class="item item-room">
-            <div class="video-compare-container" id="roomDiv" style="width: 100%;">
-                <video class="video" id="room" loop playsinline autoPlay muted src="./videos/Other-360/concats/room.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
-                <canvas height=0 class="videoMerge" id="roomMerge" style="width: 100%;"></canvas>
-            </div>
-        </div>
+          
 
         </div>
       </div>
     </div>
   </div>
-  <h2 class="subtitle has-text-centered" style="margin-top: -1.2rem;">
+  <h2 class="subtitle is-4 has-text-centered" style="margin-top: -1.2rem;">
     Inpainting Results of Other Collected 360 Scene.
   </h2>
 </section>
@@ -318,7 +338,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Three-dimensional scene inpainting is crucial for applications from virtual reality to architectural visualization, yet existing methods struggle with view consistency and geometric accuracy in 360° unbounded scenes. We present AuraFusion360, a novel reference-based method leveraging 3D Gaussian Splatting for high-quality object removal and hole filling. Our approach introduces (1) depth-aware unseen mask generation for accurate occlusion identification, (2) Adaptive Guided Depth Diffusion for geometric consistency, and (3) SDEdit-based detail enhancement for multi-view coherence.
@@ -334,18 +354,16 @@
     <!-- Pipeline Fig. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Pipeline</h2>
+        <h2 class="title is-2">Pipeline</h2>
         <div class="pipeline-figure">
           <img src="./static/images/pipeline.png" alt="Pipeline" style="width: 100%;"/>
         </div>
         <div class="content has-text-justified">
           <p>
-            Our method consists of three main components: depth-aware unseen mask generation, Adaptive Guided Depth Diffusion, and SDEdit-based detail enhancement. The depth-aware unseen mask generation module generates a depth-aware unseen mask to identify the occluded regions. The Adaptive Guided Depth Diffusion module fills the holes with geometric consistency. The SDEdit-based detail enhancement module enhances the inpainted results with multi-view coherence.
+            Our method consists of three main components: (a) depth-aware unseen mask generation, (b) Adaptive Guided Depth Diffusion, and (c) SDEdit-based detail enhancement. The depth-aware unseen mask generation module generates a depth-aware unseen mask to identify the occluded regions. The Adaptive Guided Depth Diffusion module fills the holes with geometric consistency. The SDEdit-based detail enhancement module enhances the inpainted results with multi-view coherence.
           </p>
         </div>
       </div>
-
-
     </div>
     <!--/ Pipeline Fig. -->
 
@@ -390,25 +408,14 @@
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Visualization Results</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Visualization of Unseen Mask</h3>
-
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Visualization of Depth Initialized Gaussians</h3>
- 
-        <!--/ Re-rendering. -->
-
+        <h2 class="title is-2">Visualization Results</h2>
       </div>
     </div>
     <!--/ Animation. -->
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -431,14 +438,208 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+          <h3 id="title-text" class="subtitle is-3" style="text-align: center;">
+            AuraFusion360 outperforms other methods in unbounded 360° scene inpainting.
+          </h3>
+
+          <div class="text-center ">
+              <ul class="nav nav-pills center-pills">
+                  <li class="method-pill active" data-value="gscream"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>GScream</a></li>
+                  <li class="method-pill" data-value="gaussiangrouping"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>GaussianGrouping</a></li>
+                  <li class="method-pill" data-value="infusion"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>InFusion</a></li>
+                  <li class="method-pill" data-value="2dgsleftrefill"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>2DGS+LeftRefill</a></li>
+                      <li class="method-pill" data-value="spin"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>SPin-NeRF*</a></li>
+
+                  <li class="method-pill" data-value="poisson"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>Poisson</a></li>
+                  <li class="method-pill" data-value="gdd"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>Guided Depth Diffusion</a></li>
+                  <li class="method-pill" data-value="scaleshift"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>Scale & Shift</a></li>
+              </ul>
+              <!-- <ul class="nav nav-pills center-pills">
+                  <li class="method-pill" data-value="freenerf"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>FreeNeRF</a></li>
+                  <li class="method-pill" data-value="simplenerf"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>SimpleNeRF</a></li>
+                  <li class="method-pill" data-value="zeronvs"
+                      onclick="selectCompVideo(this, activeScenePill)"><a>ZeroNVS</a></li>
+              </ul> -->
+          </div>
+
+          <script>
+              activeMethodPill = document.querySelector('.method-pill.active-pill');
+              activeScenePill = document.querySelector('.scene-pill.active-pill');
+              activeModePill = document.querySelector('.mode-pill.active-pill');
+
+              updateMethodVisibility('rgb')
+          </script>
+          
+          <div class="text-center">
+              <div class="video-container">
+                  <video class="video" style="height: 280px; max-width: 100%;" m id="compVideo0" loop playsinline autoplay muted>
+                      <source src="./videos/comparison/360USID_carton_gscream_vs_ours_rgb.mp4" />
+                  </video>
+                  <video class="video" style="height: 280px; max-width: 100%;" id="compVideo1" loop playsinline autoplay muted hidden>
+                      <source src="./videos/comparison/360USID_carton_gscream_vs_ours_rgb.mp4" />
+                  </video>
+              </div>
+
+
+              <div class="text-center" style="color: black;" id="mode-pills">
+                  <div class="btn-group btn-group-sm">
+                      <span class="btn btn-primary mode-pill active" data-value="rgb"
+                          onclick="updateMethodVisibility('rgb'); selectCompVideo(activeMethodPill, activeScenePill, null, this)">
+                          Inpainting Results
+                      </span>
+                      <span class="btn btn-primary mode-pill" data-value="mask"
+                          onclick="updateMethodVisibility('mask'); selectCompVideo(activeMethodPill, activeScenePill, null, this)">
+                          Unseen Mask
+                      </span>
+                      <span class="btn btn-primary mode-pill" data-value="depth"
+                          onclick="updateMethodVisibility('depth'); selectCompVideo(activeMethodPill, activeScenePill, null, this)">
+                          Depth Initilaized Points
+                      </span>
+                  </div>
+              </div>
+
+
+              <br>
+              <p class="text-justify" style="text-align: center; display: none;">
+                Baseline method (left) vs AuraFusion360 (right). Scene trained on <span id="compVideoValue">3</span> views. Try selecting different methods and scenes!
+              </p>
+              <p class="text-justify" style="text-align: center;">
+                <span id="description-text">3</span> Try selecting different methods and scenes!
+              </p>
+              <script>
+                  video0 = document.getElementById("compVideo0");
+                  video1 = document.getElementById("compVideo1");
+                  video0.addEventListener('loadedmetadata', function() {
+                      if (activeVidID == 0 && select){
+                          video0.play();
+                          // print video size
+                          console.log(video0.videoWidth, video0.videoHeight);
+                          video0.hidden = false;
+                          video1.hidden = true;
+                      }
+                  });
+                  video1.addEventListener('loadedmetadata', function() {
+                      if (activeVidID == 1 && select){
+                          video1.play();
+                          // print video size
+                          console.log(video1.videoWidth, video1.videoHeight);
+                          video0.hidden = true;
+                          video1.hidden = false;
+                      }
+                  });
+              </script>
+
+              <div class="pill-row scene-pills" id="scene-pills">
+                  <span class="pill scene-pill active" data-value="360USID_carton" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_carton_thumbnail.png" alt="360USID/carton" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="360USID_cone" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_cone_thumbnail.png" alt="360USID/cone" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="360USID_skateboard" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_skateboard_thumbnail.png" alt="360USID/skateboard" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="360USID_newcone" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_newcone_thumbnail.png" alt="360USID/newcone" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="360USID_sunflower" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_sunflower_thumbnail.png" alt="360USID/sunflower" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="360USID_plant" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_plant_thumbnail.png" alt="360USID/plant" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="360USID_cookie" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                      <img class="thumbnail-img" src="thumbnails/360USID_cookie_thumbnail.png" alt="360USID/cookie" width="64">
+                  </span>
+                  <br>
+
+                  <span class="pill scene-pill" data-value="Other360_kitchen" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                    <img class="thumbnail-img" src="thumbnails/Other360_kitchen_thumbnail.png" alt="Other360/kitchen" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="Other360_bear" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                    <img class="thumbnail-img" src="thumbnails/Other360_bear_thumbnail.png" alt="Other360/bear" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="Other360_bonsai" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                    <img class="thumbnail-img" src="thumbnails/Other360_bonsai_thumbnail.png" alt="Other360/bonsai" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="Other360_room" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                    <img class="thumbnail-img" src="thumbnails/Other360_room_thumbnail.png" alt="Other360/room" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="Other360_vasedeck" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                    <img class="thumbnail-img" src="thumbnails/Other360_vasedeck_thumbnail.png" alt="Other360/vasedeck" width="64">
+                  </span>
+                  <span class="pill scene-pill" data-value="Other360_pinecone" onclick="selectCompVideo(activeMethodPill, this, 6)">
+                    <img class="thumbnail-img" src="thumbnails/Other360_pinecone_thumbnail.png" alt="Other360/pinecone" width="64">
+                  </span>
+                  
+              </div>
+
+              <script>
+                  activeMethodPill = document.querySelector('.method-pill.active-pill');
+                  activeScenePill = document.querySelector('.scene-pill.active-pill');
+                  activeModePill = document.querySelector('.mode-pill.active-pill');
+                  updateMethodVisibility('rgb')
+              </script>
+          </div>
+      </div>   
+    </div>
+
+    <!-- Quantitative Results. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2">Quantitative Results</h2>
+        <p class="content has-text-justified">
+          Quantitative comparison of 360° inpainting methods on our <span class="dnerf"> 360-USID dataset</span> <span style="color: red;">Red</span> text indicates the best, and <span style="color: rgb(0, 0, 255);">Blue</span> text
+indicates the second-best performing method.
+        </p>
+        <img src="./static/images/quantitative.png" alt="Quantitative" style="width: 100%;"/>
+
+      </div>
+    </div>
+    <!-- Quantitative Results -->
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+          <h3>
+              Citation
+          </h3>
+          <div class="form-group col-md-10 col-md-offset-1">
+            <p class="text-justify"> <textarea id="bibtex" class="form-control" readonly>
+@article{wu2025aurafusion,
+title={AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting},
+author={Chung-Ho Wu, Yang-Jung Chen, Ying-Huan Chen, Jie-Ying Lee, Bo-Hsu Ke, Chun-Wei Tuan Mu, Yi-Chuan Huang, Chin-Yang Lin, Min-Hung Chen, Yen-Yu Lin, Yu-Lun Liu},
+journal={arXiv},
+year={2025}
+}</textarea></p>
+          </div>
+      </div>
+    </div>
+
+
+  <br>
+  <br>
 
   </div>
 </section>
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -448,17 +649,34 @@
   year      = {2025},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
+<!-- <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <h3>
+          Citation
+      </h3>
+      <div class="form-group col-md-10 col-md-offset-1">
+<p class="text-justify">
+          <textarea id="bibtex" class="form-control" readonly>
+@article{wu2025aurafusion,
+title={AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting},
+author={Chung-Ho Wu, Yang-Jung Chen, Ying-Huan Chen, Jie-Ying Lee, Bo-Hsu Ke, Chun-Wei Tuan Mu, Yi-Chuan Huang, Chin-Yang Lin, Min-Hung Chen, Yen-Yu Lin, Yu-Lun Liu},
+journal={arXiv},
+year={2025}
+}</textarea></p>
+      </div>
+  </div>
+</div> -->
 
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://kkennethwu.github.io/" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
