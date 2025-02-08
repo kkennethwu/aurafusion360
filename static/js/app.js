@@ -12,6 +12,9 @@ $(document).ready(function () {
         lineWrapping: true,
         readOnly: true
     });
+    // 設定固定高度，例如 150px（可根據需要調整）
+    editor.setSize(null, "180px");
+    
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
