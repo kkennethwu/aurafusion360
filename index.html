@@ -209,12 +209,6 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
 
-          <div class="item item-carton">
-              <div class="video-compare-container" id="cartonDiv" style="width: 100%;">
-                  <video class="video" id="carton" loop playsinline autoPlay muted src="./videos/360-USID/concats/carton.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
-                  <canvas height=0 class="videoMerge" id="cartonMerge" style="width: 100%;"></canvas>
-              </div>
-          </div>
 
           <div class="item item-cone">
               <div class="video-compare-container" id="coneDiv" style="width: 100%;">
@@ -257,6 +251,13 @@
                 <canvas height=0 class="videoMerge" id="plantMerge" style="width: 100%;"></canvas>
             </div>
           </div>
+
+          <div class="item item-carton">
+            <div class="video-compare-container" id="cartonDiv" style="width: 100%;">
+                <video class="video" id="carton" loop playsinline autoPlay muted src="./videos/360-USID/concats/carton.mp4" onplay="resizeAndPlay(this)" width="100%"></video>
+                <canvas height=0 class="videoMerge" id="cartonMerge" style="width: 100%;"></canvas>
+            </div>
+        </div>
 
         </div>
       </div>
@@ -486,10 +487,10 @@
           <div class="text-center">
               <div class="video-container">
                   <video class="video" style="height: 280px; max-width: 100%;" m id="compVideo0" loop playsinline autoplay muted>
-                      <source src="./videos/comparison/360USID_carton_gscream_vs_ours_rgb.mp4" />
+                      <source src="./videos/comparison/360USID_skateboard_gscream_vs_ours_rgb.mp4" />
                   </video>
                   <video class="video" style="height: 280px; max-width: 100%;" id="compVideo1" loop playsinline autoplay muted hidden>
-                      <source src="./videos/comparison/360USID_carton_gscream_vs_ours_rgb.mp4" />
+                      <source src="./videos/comparison/360USID_skateboard_gscream_vs_ours_rgb.mp4" />
                   </video>
               </div>
 
@@ -543,13 +544,13 @@
               </script>
 
               <div class="pill-row scene-pills" id="scene-pills">
-                  <span class="pill scene-pill active" data-value="360USID_carton" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                  <span class="pill scene-pill" data-value="360USID_carton" onclick="selectCompVideo(activeMethodPill, this, 3)">
                       <img class="thumbnail-img" src="thumbnails/360USID_carton_thumbnail.png" alt="360USID/carton" width="64">
                   </span>
                   <span class="pill scene-pill" data-value="360USID_cone" onclick="selectCompVideo(activeMethodPill, this, 3)">
                       <img class="thumbnail-img" src="thumbnails/360USID_cone_thumbnail.png" alt="360USID/cone" width="64">
                   </span>
-                  <span class="pill scene-pill" data-value="360USID_skateboard" onclick="selectCompVideo(activeMethodPill, this, 3)">
+                  <span class="pill scene-pill active" data-value="360USID_skateboard" onclick="selectCompVideo(activeMethodPill, this, 3)">
                       <img class="thumbnail-img" src="thumbnails/360USID_skateboard_thumbnail.png" alt="360USID/skateboard" width="64">
                   </span>
                   <span class="pill scene-pill" data-value="360USID_newcone" onclick="selectCompVideo(activeMethodPill, this, 3)">
