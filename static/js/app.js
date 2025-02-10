@@ -116,7 +116,7 @@ function updateMethodVisibility(mode) {
     const descriptByMode = {
         'rgb': "Baseline method (left) vs AuraFusion360 (right).",
         'depth': "Baseline method (left) vs Our Adaptive Guided Depth Diffusion (right).",
-        'mask': "Baseline method (left) vs Our Depth-Aware Unseen Mask Generation (right)."
+        'mask': "Gaussian Grouping Video Tracker (left) vs Our Depth-Aware Unseen Mask Generation (right)."
     }
 
     const descriptionElement = document.getElementById('description-text');
