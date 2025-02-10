@@ -109,8 +109,8 @@ function updateMethodVisibility(mode) {
 
     const titlesByMode = {
         'rgb': 'AuraFusion360 outperforms other methods in unbounded 360° scene inpainting.',
-        'depth': 'Our Adaptive Guided Depth Diffusion can unproject the reference view into well-aligned initial Gaussians with high accuracy, making it a reliable foundation for our subsequent SDEdit processes.',
-        'mask': 'Our Unseen Mask Generation shceme can accurately identified unseen region.'
+        'depth': 'Our Adaptive Guided Depth Diffusion effectively produces well-aligned depth, enabling the accurate unprojection of the reference view into high-quality initial Gaussians. This ensures a reliable foundation for our subsequent SDEdit processes.',
+        'mask': 'Our Depth-Aware Unseen Mask Generation scheme can accurately identify unseen regions.'
     };
 
     const descriptByMode = {
