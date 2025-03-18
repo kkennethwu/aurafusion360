@@ -351,7 +351,10 @@
       <div class="column is-full-width">
         <h2 class="title is-2">News</h2>
         <h4>
-          <strong>[2025.2.10]</strong> <img src="static/images/favicon.svg" alt="icon" style="height: 1em; vertical-align: -0.5mm;"> Release project page, arXiv paper, dataset, and evaluation results!
+          <strong>[2025.02.19]</strong> Release 360-USID dataset on Hugging Face! Try it out! <a href="https://huggingface.co/datasets/kkennethwu/360-USID">Hugging Face</a> 
+        </h4>
+        <h4>
+          <strong>[2025.02.10]</strong> <img src="static/images/favicon.svg" alt="icon" style="height: 1em; vertical-align: -0.5mm;"> Release project page, arXiv paper, dataset, and evaluation results!
         </h4>
       </div>
     </div>  
@@ -395,7 +398,7 @@
             <img src="./static/images/unseen.png" alt="Unseen" style="width: 100%;"/>
           </div>
           <p>
-            Our depth-aware unseen mask generation method operates in two steps. First, it generates a depth-aware unseen contour through depth warping to identify truly occluded regions. Then, it uses this contour as a bounding box prompt for SAM2 to segment the unseen region.
+            Depth-aware unseen mask generation creates depth-aware unseen contours via depth warping to identify occluded regions, then uses these contours as bounding box prompts for SAM2 to segment unseen areas.
           </p>
         </div>
       </div>
@@ -409,7 +412,7 @@
               <img src="./static/images/agdd.png" alt="Agdd" style="width: 100%;"/>
             </div>
             <p>
-              Our AGDD is a zero-shot method that effectively aligns the estimated monocular depth with the existing geometric structure without requiring additional training.
+              AGDD predicts estimated depth with existing geometric scale in a zero-shot manner through latent optimization with an adaptive loss term to achieve accurate alignment in regions adjacent to unseen areas, which is more appropriate for depth inpainting scenarios.
             </p>
         </div>
       </div>
